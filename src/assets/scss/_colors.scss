@@ -1,0 +1,23 @@
+.good {
+  background: linear-gradient(270deg, #288948 0%, #70c89f 100%);
+}
+
+.moderate {
+  background: linear-gradient(270deg, #fdcb0d 0%, #fde661 100%);
+}
+
+.sensitive {
+  background: linear-gradient(270deg, #fd9a43 0%, #fdc79b 100%);
+}
+
+.unhealthy {
+  background: linear-gradient(270deg, #fd4944 0%, #fd988d 100%);
+}
+
+.very-unhealthy {
+  background: linear-gradient(270deg, #844efd 0%, #b88efd 100%);
+}
+
+.hazardous {
+  background: linear-gradient(270deg, #5723a8 0%, #7d5ea8 100%);
+}

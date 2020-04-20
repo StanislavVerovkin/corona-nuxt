@@ -6,7 +6,7 @@ const nuxtConfig = require( './nuxt.config.js' );
 const config = {
   ...nuxtConfig,
   dev: false,
-  debug: true,
+  debug: false,
   buildDir: 'nuxt',
 };
 const nuxt = new Nuxt( config );

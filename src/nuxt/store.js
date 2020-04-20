@@ -14,6 +14,7 @@ let store = {};
   store.modules = store.modules || {}
 
   resolveStoreModules(require('../store/chart.js'), 'chart.js')
+  resolveStoreModules(require('../store/home.js'), 'home.js')
   resolveStoreModules(require('../store/list.js'), 'list.js')
 
   // If the environment supports hot reloading...

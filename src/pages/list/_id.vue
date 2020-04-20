@@ -1,30 +1,30 @@
 <template>
+  <div>
     <div class="container h-100 mt-5">
-        <div class="row h-100 align-items-center">
-            <div class="col-xl-12">
-                <div class="d-flex justify-content-center">
-                    <nuxt-link
-                            to="/list"
-                            class="text-decoration-none show-btn"
-                    >
-                        GO BACK
-                    </nuxt-link>
-                </div>
-                <div class="chartAreaWrapper">
-                    <bar-chart
-                            class="walking-speed-chart"
-                            :data="barChartData"
-                            :options="barChartOptions"
-                            :height="260">
-                    </bar-chart>
-                </div>
-            </div>
+      <div class="row">
+        <div class="col-xl-6">
+          <Breadcrumbs/>
         </div>
+      </div>
+      <div class="row h-75 align-items-center">
+        <div class="col-xl-12">
+          <div class="chartAreaWrapper">
+            <bar-chart
+              class="walking-speed-chart"
+              :data="barChartData"
+              :options="barChartOptions"
+              :height="200">
+            </bar-chart>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </template>
 
 <script>
   import BarChart from '../../components/Chart'
+  import Breadcrumbs from "../../components/Breadcrumbs";
 
   const chartColors = {
     red: 'rgb(255, 99, 132)',
@@ -80,6 +80,7 @@
       await store.dispatch( 'chart/historyByCountryAction', params.id );
     },
     components: {
+      Breadcrumbs,
       BarChart
     },
     created () {
@@ -106,17 +107,17 @@
 </script>
 
 <style lang="scss" scoped>
-    .show-btn {
-        border: 1px solid;
-        padding: 10px 20px 10px 20px;
-        margin-bottom: 20px;
-    }
+  .show-btn {
+    border: 1px solid;
+    padding: 10px 20px 10px 20px;
+    margin-bottom: 20px;
+  }
 
-    .chartAreaWrapper {
-        overflow-x: scroll;
-    }
+  .chartAreaWrapper {
+    overflow-x: scroll;
+  }
 
-    .walking-speed-chart {
-        width: 1110px;
-    }
+  .walking-speed-chart {
+    width: 1110px;
+  }
 </style>

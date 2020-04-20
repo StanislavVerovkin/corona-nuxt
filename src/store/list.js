@@ -39,7 +39,7 @@ export const mutations = {
 
 export const actions = {
   async allCountriesAction ( { commit } ) {
-    const countries = await this.$axios.$get( 'https://corona.lmao.ninja/countries' );
+    const countries = await this.$axios.$get( 'https://corona.lmao.ninja/v2/countries' );
     commit( 'setCountries', countries );
     commit( 'serializeDataForWorldMap', countries );
   },

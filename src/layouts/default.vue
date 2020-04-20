@@ -13,4 +13,8 @@
     background-color: #121212 !important;
     font-family: 'Inconsolata', monospace;
   }
+
+  #__nuxt, #__layout {
+    height: 100%;
+  }
 </style>

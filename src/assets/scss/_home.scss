@@ -1,0 +1,60 @@
+h4 {
+  color: #ffffff;
+}
+
+.card {
+  color: #ffffff;
+  background-color: #191a1e;
+  border: none;
+}
+
+.card-header {
+  font-size: 21px;
+}
+
+.card-footer {
+  font-size: 15px;
+}
+
+.card-text {
+  span {
+    font-size: 13px;
+  }
+}
+
+.description {
+  font-size: 15px;
+}
+
+.info-img {
+  width: 15px;
+  cursor: pointer;
+}
+
+.list {
+  background: linear-gradient(270deg, #2bd1ff 0%, #21ade4 100%);
+}
+
+.map {
+  background: linear-gradient(270deg, #32fab2 0%, #00b0b6 100%);
+}
+
+.cases {
+  background: linear-gradient(90deg, #522de2 0%, #5a2fff 100%);
+}
+
+.recovered {
+  background: linear-gradient(233deg, #c568f6 0%, #f3629b 100%);
+}
+
+.deaths {
+  background: linear-gradient(270deg, #7c66ff 0%, #7a28ff 100%);
+}
+
+.ukraine-covid {
+  background: linear-gradient(270deg, #0a0a0a 0%, #29292b 100%);
+}
+
+.ukraine-air {
+  background: linear-gradient(270deg, #29292b 0%, #0a0a0a 100%);
+}

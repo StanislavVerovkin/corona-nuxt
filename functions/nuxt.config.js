@@ -17,7 +17,7 @@ module.exports = {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  loading: false,
   /*
   ** Global CSS
   */
@@ -30,7 +30,8 @@ module.exports = {
   */
   plugins: [
     { src: '~/plugins/map', ssr: false },
-    { src: '~plugins/ga.js', mode: 'client' }
+    { src: '~/plugins/numeral', ssr: true },
+    { src: '~plugins/ga.js', mode: 'client' },
   ],
 
 
@@ -45,6 +46,7 @@ module.exports = {
     // Doc: https://bootstrap-vue.js.org
     'bootstrap-vue/nuxt',
     '@nuxtjs/axios',
+    '@nuxtjs/moment',
   ],
   /*
   ** Build configuration

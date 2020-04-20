@@ -8,8 +8,6 @@ import {
   sanitizeComponent
 } from './utils'
 
-import NuxtLoading from './components/nuxt-loading.vue'
-
 import '../node_modules/bootstrap/dist/css/bootstrap.css'
 
 import '../node_modules/bootstrap-vue/dist/bootstrap-vue.css'
@@ -24,8 +22,6 @@ const layouts = { "_default": sanitizeComponent(_6f6c098b) }
 
 export default {
   render (h, props) {
-    const loadingEl = h('NuxtLoading', { ref: 'loading' })
-
     const layoutEl = h(this.layout || 'nuxt')
     const templateEl = h('div', {
       domProps: {
@@ -54,7 +50,6 @@ export default {
         id: '__nuxt'
       }
     }, [
-      loadingEl,
 
       transitionEl
     ])
@@ -90,13 +85,6 @@ export default {
     this.context = this.$options.context
   },
 
-  mounted () {
-    this.$loading = this.$refs.loading
-  },
-  watch: {
-    'nuxt.err': 'errorChanged'
-  },
-
   computed: {
     isOffline () {
       return !this.isOnline
@@ -127,7 +115,6 @@ export default {
       if (!pages.length) {
         return
       }
-      this.$loading.start()
 
       const promises = pages.map((page) => {
         const p = []
@@ -161,21 +148,8 @@ export default {
       try {
         await Promise.all(promises)
       } catch (error) {
-        this.$loading.fail(error)
         globalHandleError(error)
         this.error(error)
-      }
-      this.$loading.finish()
-    },
-
-    errorChanged () {
-      if (this.nuxt.err && this.$loading) {
-        if (this.$loading.fail) {
-          this.$loading.fail(this.nuxt.err)
-        }
-        if (this.$loading.finish) {
-          this.$loading.finish()
-        }
       }
     },
 
@@ -194,8 +168,4 @@ export default {
       return Promise.resolve(layouts['_' + layout])
     }
   },
-
-  components: {
-    NuxtLoading
-  }
 }
